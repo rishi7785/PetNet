@@ -1,0 +1,27 @@
+{
+  "name": "petnetproject",
+  "version": "1.0.0",
+  "description": "a facebook-lite social media app for pet owners to connect",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Andrew Haddock",
+  "license": "MIT",
+  "dependencies": {
+    "bluebird": "^3.4.7",
+    "body-parser": "^1.15.2",
+    "connect-flash": "^0.1.1",
+    "express": "^4.14.0",
+    "express-handlebars": "^3.0.0",
+    "express-messages": "^1.0.1",
+    "express-session": "^1.14.2",
+    "json-server": "^0.9.4",
+    "method-override": "^2.3.7",
+    "mongodb": "^2.2.16",
+    "nodemon": "^1.11.0",
+    "semantic-ui": "^2.2.7",
+    "semantic-ui-css": "^2.2.4"
+  }
+}
