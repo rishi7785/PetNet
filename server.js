@@ -11,7 +11,7 @@ server.use(express.static('public'));
 var port = 3000;
 
 // Load body parser module
-var bodyParser  require('body-parser');
+var bodyParser = require ('body-parser');
 
 // Set express to use body parser to pull from POST requests
 server.use(bodyParser.urlencoded({extended: true}));
@@ -26,7 +26,7 @@ var methodOverride = require('method-override');
 server.use(methodOverride (function(request, response) {
     if (request.body) {
         if(typeof request.body == 'object') {
-            If(request.body._method) {
+            if (request.body._method) {
                 var method = request.body._method
 
                 delete request.body._method;
@@ -103,7 +103,7 @@ server.set ('views', __dirname + '/templates/partials');
 server.set ('view engine', '.hbs');
 
 // Bring in the Mongo DB client driver
-var mongoClient - require('mongodb').MongoClient;
+var mongoClient = require('mongodb').MongoClient;
 
 // Reference to the database
 global.db;
@@ -148,5 +148,10 @@ var basicRoutes = require('./routes/basic.js');
 server.use('/', basicRoutes);
 
 // Connect the user routes
-var userRoutes = require('./routes/user.js');
-server.user('/user', userRoutes);
+var userRoutes = require ('./routes/user/user.js');
+
+server.use ('/user', userRoutes);
+
+var accessRoutes = require ('./routes/user/access.js');
+
+server.use ('/', accessRoutes);

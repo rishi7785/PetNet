@@ -1,0 +1,14 @@
+<h2>{{data.title}}</h2>
+
+<form method="POST" action="/user/{{ data.user.id }}" enctype="application/x-www-form-urlencoded">
+    <input type="hidden" name="_method" value="{{data.method}}">
+    <input type="text" name="username" placeholder="username" value="{{data.user.username}}" required>
+    <input type="email" name="email" placeholder="E-mail" value="{{data.user.email}}"required>
+    <input type="password" name="password" placeholder="Password" value="{{data.user.password}}"required>
+    <div>
+        <p>Admin</p>
+        <p><input type="radio" name="admin" value="true">Admin</p>
+        <p><input type="radio" name="admin" value="false">Customer</p></li>
+    </div>
+    <button type="submit">Create New User</button>
+</form>

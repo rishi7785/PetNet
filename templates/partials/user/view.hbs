@@ -1,0 +1,17 @@
+<h2>User</h2>
+
+<a class="btn btn-primary"href="/user/{{ data.user.id }}/edit">Edit User</a>
+<a class="btn btn-danger"href="/user/{{ data.user.id }}/delete">Delete User</a>
+
+
+<div>
+    <div>
+        <strong>Name </strong>{{data.user.username}}
+    </div>
+    <div>
+        <strong>E-Mail</strong> {{data.user.email}}
+    </div>
+    <div>
+        <strong>Admin</strong> {{data.user.admin}}
+    </div>
+</div>
