@@ -1,51 +1,58 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title>PetNet Project</title>
-        <!-- <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
-        <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script> <script src="semantic/dist/semantic.min.js"></script> -->
+<head>
+    <meta charset="utf-8">
+    <title>PetNet Project</title>
+    <!-- <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script> <script src="semantic/dist/semantic.min.js"></script> -->
 
-        <link href="/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" type="text/css">
-        <link href="/css/style.less" rel="stylesheet" type="text/less">
+    <link href="/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="/css/style.less" rel="stylesheet" type="text/less">
 
-        <!-- set options before less.js script -->
-        <script>
-         less = {
-           env: "development",
-           async: false,
-           fileAsync: false,
-           poll: 1000,
-           functions: {},
-           dumpLineNumbers: "comments",
-           relativeUrls: false,
-           rootpath: ":/a.com/"
-         };
-        </script>
-        <script src="/lib/less/dist/less.js"></script>
-        <script src="/lib/jquery/dist/jquery.js"></script>
-        <script src="/lib/bootstrap/dist/js/bootstrap.js"></script>
-    </head>
+    <!-- set options before less.js script -->
+    <script>
+    less = {
+        env: "development",
+        async: false,
+        fileAsync: false,
+        poll: 1000,
+        functions: {},
+        dumpLineNumbers: "comments",
+        relativeUrls: false,
+        rootpath: ":/a.com/"
+    };
+    </script>
+    <script src="/lib/less/dist/less.js"></script>
+    <script src="/lib/jquery/dist/jquery.js"></script>
+    <script src="/lib/bootstrap/dist/js/bootstrap.js"></script>
+</head>
 
-    </head>
-    <body>
-        <nav class="navbar navbar-inverse">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <a class="navbar-brand" href="/">PetNet</a>
-                </div>
-                <ul class="nav navbar-nav">
-                    <li class="active"><a href='/'>Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#">Login</a></li>
-                    <li><a href="#">Sign up</a></li>
-                </ul>
+</head>
+<body>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/">PetNet</a>
             </div>
-        </nav>
+            <ul class="nav navbar-nav">
+                <li class="active"><a href='/'>Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+            {{#if user }}
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="/user"><span class="glyphicon glyphicon-user"></span>Users</a></li>
+                <li><a href="/logout"><span class="glyphicon glyphicon-log-in"></span>Logout</a></li>
+            </ul>
+            {{else }}
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="/register"><span class="glyphicon glyphicon-user"></span>Register</a></li>
+                <li><a href="/login"><span class="glyphicon glyphicon-log-in"></span>Login</a></li>
+            </ul>
+            {{/if}}
+        </div>
+    </nav>
 
-        {{{ body }}}
-    </body>
+    {{{ body }}}
+</body>
 </html>
